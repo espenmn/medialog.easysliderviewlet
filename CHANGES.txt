@@ -1,0 +1,16 @@
+Changelog
+=========
+
+
+I could need some help with this product :)
+
+
+0.1dev (unreleased)
+-------------------
+
+- Package created using zopeskel
+
+
+To do:
+- Clean up code (remove imports that should not be there)
+- Write tests 

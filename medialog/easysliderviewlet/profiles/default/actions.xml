@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<object name="portal_actions" meta_type="Plone Actions Tool">
+    <action-provider name="portal_actions">
+
+        <action title="Enable easysliderviewlet" action_id="enable_easyslider" category="object_buttons"
+            condition_expr="not:object/@@easysliderviewlet_util/enabled"
+            url_expr="string:${object_url}/@@enable_easyslider" visible="True">
+            <permission>medialog.easysliderviewlet: Manage easysliderviewlet settings</permission>
+        </action>
+
+        <action title="Disable easysliderviewlet" action_id="disable_easyslider" category="object_buttons"
+            condition_expr="object/@@easysliderviewlet_util/enabled"
+            url_expr="string:${object_url}/@@disable_easyslider" visible="True">
+            <permission>medialog.easysliderviewlet: Manage easysliderviewlet settings</permission>
+        </action>
+ 
+		
+		<action title="Easysliderviewlet Settings" action_id="easysliderviewlet_settings" category="object"
+            condition_expr="object/@@easysliderviewlet_util/enabled"
+            url_expr="string:${object_url}/@@easysliderviewlet_settings" visible="True">
+            <permission>medialog.easysliderviewlet: Manage easysliderviewlet settings</permission>
+        </action>
+    </action-provider>
+</object>

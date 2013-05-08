@@ -1,0 +1,75 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="medialog.easysliderviewlet">
+
+  <include package="plone.app.contentmenu" />
+
+  <!-- -*- extra stuff goes here -*- -->
+  
+  
+    <include package="collective.easyslider" /> 
+    
+    <browser:page
+	    for="collective.easyslider.interfaces.ISlider"
+        name="vieweasyslider"
+	    class="collective.easyslider.browser.views.SliderView"
+        permission="zope2.View"    
+        template = "vieweasyslider.pt"  
+    />
+    
+    <interface
+        interface=".interfaces.IThemeSpecific"
+        type="zope.publisher.interfaces.browser.IBrowserSkinType"
+        name="easysliderviewletinterface"
+        />
+
+    <browser:viewlet
+       for="medialog.easysliderviewlet.interfaces.IEasysliderviewlet"
+       name="easysliderviewlet"
+       manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+       class=".viewlets.EasysliderViewlet"
+       permission="zope2.View"
+       />
+
+  <browser:page 
+    name="enable_easyslider"
+    for="*"
+        permission="zope2.View"
+    allowed_interface="medialog.easysliderviewlet.interfaces.IEasysliderviewletUtilProtected"
+    attribute="enable"
+    layer="medialog.easysliderviewlet.interfaces.IEasysliderviewletLayer"
+    class=".utils.EasysliderviewletUtilProtected" />
+
+  <browser:page 
+    name="disable_easyslider"
+    for="*"
+        permission="zope2.View"
+    allowed_interface="medialog.easysliderviewlet.interfaces.IEasysliderviewletUtilProtected"
+    attribute="disable"
+    layer="medialog.easysliderviewlet.interfaces.IEasysliderviewletLayer"
+    class=".utils.EasysliderviewletUtilProtected" />
+
+   <browser:page 
+     name="easysliderviewlet_util"
+     for="*"
+        permission="zope2.View"
+     allowed_interface="medialog.easysliderviewlet.interfaces.IEasysliderviewletUtil"
+     layer="medialog.easysliderviewlet.interfaces.IEasysliderviewletLayer"
+     class=".utils.EasysliderviewletUtil" />
+
+  <browser:page
+    name="easysliderviewlet_settings"
+    for="medialog.easysliderviewlet.interfaces.IEasysliderviewlet"
+    class=".forms.EasysliderviewletSettingsForm"
+        layer="medialog.easysliderviewlet.interfaces.IEasysliderviewletLayer"
+    permission="zope2.View"/>
+     
+  <adapter 
+    for="medialog.easysliderviewlet.interfaces.IEasysliderviewlet"
+    provides="medialog.easysliderviewlet.interfaces.IEasysliderviewletSettings"
+    factory="medialog.easysliderviewlet.settings.EasysliderviewletSettings" />
+
+</configure>
+
+     

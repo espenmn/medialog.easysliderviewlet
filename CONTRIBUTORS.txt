@@ -1,0 +1,4 @@
+Contributors
+=============
+
+Thanks to Moo for help on #plone

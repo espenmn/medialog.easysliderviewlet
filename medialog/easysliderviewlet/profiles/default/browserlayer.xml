@@ -1,0 +1,4 @@
+<layers>
+    <layer name="medialog.easysliderviewlet" 
+           interface="medialog.easysliderviewlet.interfaces.IEasysliderviewletLayer" />
+</layers>
