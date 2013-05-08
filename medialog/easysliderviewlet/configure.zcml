@@ -20,5 +20,13 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+  <genericsetup:registerProfile
+      name="header"
+      title="Easyslider viewlet in the header"
+      directory="profiles/header"
+      description="Adds a viewlet to display a slidewhow (collective.easyslider)"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
 
 </configure>
