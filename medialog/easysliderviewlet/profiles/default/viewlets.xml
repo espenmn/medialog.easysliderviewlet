@@ -3,4 +3,7 @@
  <order manager="plone.abovecontent" skinname="*" >
   <viewlet name="easysliderviewlet" />
  </order>
+  <hidden manager="plone.portalheader" skinname="*" >
+  <viewlet name="easyslider_top_viewlet" />
+ </hidden>
 </object>

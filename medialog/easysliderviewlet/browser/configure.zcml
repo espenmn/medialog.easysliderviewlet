@@ -27,9 +27,18 @@
     <browser:viewlet
        for="medialog.easysliderviewlet.interfaces.IEasysliderviewlet"
        name="easysliderviewlet"
+       manager="plone.app.layout.viewlets.interfaces.IAboveContent"
        class=".viewlets.EasysliderViewlet"
        permission="zope2.View"
        />
+       
+    <browser:viewlet
+        for="medialog.easysliderviewlet.interfaces.IEasysliderviewlet"
+        name="easyslider_top_viewlet"
+        manager="plone.app.layout.viewlets.interfaces.IPortalTop"
+        class=".viewlets.EasysliderViewlet"
+        permission="zope2.View"
+     />
        
   <browser:page 
     name="enable_easyslider"
