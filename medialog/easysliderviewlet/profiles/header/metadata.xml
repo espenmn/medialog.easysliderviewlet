@@ -3,6 +3,5 @@
   <version>1000</version>
   <dependencies>
     <dependency>profile-collective.easyslider:default</dependency>
-    <dependency>profile-medialog.easysliderviewlet:default</dependency>
   </dependencies>
 </metadata>
